@@ -1,0 +1,8 @@
+flashgames.HeatRushFuture-v0 
+flashgames.FormulaRacer-v0
+flashgames.DuskDrive-v0
+flashgames.NeonRace-v0
+flashgames.SpacePunkRacer-v0    
+flashgames.CoasterRacer-v0  
+flashgames.HeatRushUsa-v0   
+flashgames.CoasterRacer2-v0 

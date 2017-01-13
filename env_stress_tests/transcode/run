@@ -1,0 +1,16 @@
+#!/bin/bash -eu
+
+for BASE_DIR in "$@"
+do
+    for SERVER_FBS in $(find $BASE_DIR -name server.fbs)
+    do
+        SERVER_RAW_FBS="$(dirname $SERVER_FBS)/server.raw.fbs"
+        if [ -f $SERVER_RAW_FBS ]
+        then
+            echo skipping $SERVER_FBS
+        else
+            echo starting $SERVER_FBS
+            ./make-podspec.py $SERVER_FBS $SERVER_RAW_FBS | kubectl create -f -
+        fi
+    done
+done

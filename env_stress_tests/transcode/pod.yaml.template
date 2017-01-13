@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  generateName: transcode-
+spec:
+  containers:
+  - name: agent
+    image: docker.openai.com/transcode
+    args: ["-in=__FBS_IN__", "-out=__FBS_OUT__"]
+    volumeMounts:
+      - name: efs
+        mountPath: /mnt/efs
+  volumes:
+  - name: efs
+    persistentVolumeClaim:
+      claimName: nfs-us-west-claim
+  restartPolicy: Never
+  nodeSelector:
+    aws/type: c4.8xlarge
