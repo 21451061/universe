@@ -45,5 +45,5 @@ spec:
   hostIPC: true
   restartPolicy: Never
   nodeSelector:
-    aws/type: c4.8xlarge
+    azure/type: Standard_H16
     openai/computing: "__DISABLE_HYPERTHREADS__"
