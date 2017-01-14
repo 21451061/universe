@@ -5,6 +5,7 @@ metadata:
   labels:
     cpu_quota: "__CPU_QUOTA__"
     env_id: __ENV_ID__
+    noht: "__DISABLE_HYPERTHREADS__"
 spec:
   containers:
   - name: agent
@@ -45,4 +46,4 @@ spec:
   restartPolicy: Never
   nodeSelector:
     aws/type: c4.8xlarge
-    openai/computing: "true"  # disable hyperthreading
+    openai/computing: "__DISABLE_HYPERTHREADS__"
